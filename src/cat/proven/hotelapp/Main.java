@@ -1,6 +1,8 @@
 package cat.proven.hotelapp;
 
 
+import cat.proven.hotelapp.model.Hotel;
+import cat.proven.hotelapp.model.NegativeException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -10,8 +12,10 @@ import java.util.Scanner;
  */
 public class Main {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NegativeException {
         // TODO code application logic here
+        Hotel hotel=new Hotel();
+        hotel.llenar();
         int opcion;
         do{
             System.out.println("\n\nWelcome to HOTEL-APP; The madafakin Hotels");
@@ -19,9 +23,11 @@ public class Main {
             switch(opcion){
                 case 1:
                     System.out.println("Listar Habitaciones");
+                    hotel.AllRooms().toString();
                     break;
                 case 2:
                     System.out.println("Listar clientes");
+                    hotel.AllCustomers();
                     break;
                 case 3:
                     System.out.println("Listar Habitaiones ocupadas");

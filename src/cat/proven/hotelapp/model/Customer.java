@@ -13,6 +13,7 @@ public class Customer {
         this.nif = nif;
     }
     
+    
     public String getName() {
         return name;
     }
